@@ -1,4 +1,4 @@
- *
+  *
 /* ---------------------------------------------------
    🎨  ألوان الخلفية + دخول ناعم للصفحة
 ----------------------------------------------------*/
@@ -28,23 +28,23 @@ h1 {
 }
 
 /* ---------------------------------------------------
-   🖼️  المعرض الرئيسي — 6 صور كبيرة (عمودي)
+   🖼️  المعرض الرئيسي — 6 صور كبيرة (مربعات عمودية)
 ----------------------------------------------------*/
 .main-gallery {
-    display: flex;          /* استخدام Flexbox بدل Grid */
-    flex-direction: column; /* ترتيب العناصر عمودي */
-    gap: 25px;              /* مسافة بين العناصر */
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
     margin-bottom: 40px;
-    align-items: center;    /* جعل العناصر في الوسط */
+    align-items: center;
 }
 
 .main-gallery .item {
     position: relative;
     overflow: hidden;
-    border-radius: 18px;
+    border-radius: 18px;  /* كما هو */
     cursor: pointer;
-    height: 270px;
-    width: 80%;            /* عرض كل صورة 80% من الحاوية */
+    width: 270px;         /* مربع */
+    height: 270px;        /* مربع */
     background: #ddd;
     transition: .4s;
     box-shadow: 0 8px 20px rgba(0,0,0,0.15);
@@ -135,19 +135,20 @@ h1 {
 }
 
 /* ---------------------------------------------------
-   🖼️  معرض الـ 10 صور داخل كل قسم
+   🖼️  معرض الـ 10 صور داخل كل قسم (عمودين × 5 صور)
 ----------------------------------------------------*/
 .inside-gallery {
     display: none;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 18px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);  /* عمودين */
+    gap: 20px;
     padding: 20px;
     animation: fadeIn .4s ease-in-out;
 }
 
 .inside-gallery img {
     width: 100%;
-    height: 180px;
+    height: 220px; /* تكبير حجم الصور */
     object-fit: cover;
     cursor: pointer;
     border-radius: 14px;
