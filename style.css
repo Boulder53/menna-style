@@ -274,33 +274,46 @@ h1 {
      color: #ff0050;
   }
 
-/* ====== تحسين عرض الموقع على الموبايل ====== */
+/* ----------------------------------------------------
+   📱 تعديل خاص بالموبايل — 6 صور تملأ الشاشة
+----------------------------------------------------*/
 @media (max-width: 600px) {
 
-    /* تكبير صور المعارض الرئيسية */
-    .gallery-container {
-        grid-template-columns: repeat(2, 1fr) !important;
-        gap: 15px;
+    .main-gallery {
+        grid-template-columns: 1fr;   /* صورة واحدة في الصف */
+        gap: 20px;
     }
 
-    .gallery-item {
-        height: 170px !important; /* تكبير الارتفاع */
+    .main-gallery .item {
+        height: 350px;  /* تكبير الصور */
     }
 
-    /* تكبير الصور داخل المعرض نفسه (العشر صور) */
-    .modal-images {
-        grid-template-columns: repeat(2, 1fr) !important;
+    h1 {
+        font-size: 28px;
+        margin-bottom: 25px;
     }
 
-    .modal-images img {
-        height: 150px !important;
+    .inside-gallery {
+        grid-template-columns: repeat(2, 1fr); /* عرض 10 صور بشكل مناسب */
+        gap: 12px;
     }
 
-    /* تصغير الـ modal عند فتح صورة مكبرة */
-    .full-image img {
-        width: 90%;
-        max-height: 70vh;
+    .inside-gallery img {
+        height: 160px; /* صور المعرض أكبر شوية */
     }
 
+    .media {
+        height: auto;
+        padding: 20px;
+    }
+
+    .media h2 {
+        margin-bottom: 40px;
+        font-size: 20px;
+    }
+
+    .links i {
+        font-size: 1.6rem;
+    }
 }
 
