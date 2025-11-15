@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<title>معرض منة الله</title>
+<link rel="stylesheet" href="new.css">
+
+</head>
+<body>
+
+<h1>   منه ستايل      </h1>
+
+<!-- ---------------------------------------------------
+     🌟  6 صور رئيسية 
+------------------------------------------------------>
+<div class="main-gallery">
+
+    <div class="item" onclick="openGallery('gallery1')">
+        <img src="ph13.jpg">
+        <div class="hover-text">ملابس حريمي</div>
+    </div>
+
+    <div class="item" onclick="openGallery('gallery2')">
+        <img src="">
+        <div class="hover-text">ملابس حريمي</div>
+    </div>
+
+    <div class="item" onclick="openGallery('gallery3')">
+        <img src="">
+        <div class="hover-text">ملابس حريمي</div>
+    </div>
+
+    <div class="item" onclick="openGallery('gallery4')">
+        <img src="">
+        <div class="hover-text">ملابس حريمي</div>
+    </div>
+
+    <div class="item" onclick="openGallery('gallery5')">
+        <img src="">
+        <div class="hover-text">ملابس حريمي</div>
+    </div>
+
+    <div class="item" onclick="openGallery('gallery6')">
+        <img src="">
+        <div class="hover-text">ملابس حريمي</div>
+    </div>
+
+</div>
+
+<div class="back-btn" onclick="goBack()">الرجوع للمعارض</div>
+
+<!-- ---------------------------------------------------
+     🎯  كل معرض داخلي = 10 صور — أماكنها فاضية
+------------------------------------------------------>
+<div id="gallery1" class="inside-gallery">
+    <img src="ph1.jpg"> <img src="ph10.jpg"> <img src="ph11.jpg"> <img src="ph14.jpg"> <img src="ph15.jpg">
+    <img src="ph19.jpg"> <img src="ph12.jpg"> <img src="ph19.jpg"> <img src="ph16.jpg"> <img src="ph18.jpg">
+</div>
+
+<div id="gallery2" class="inside-gallery">
+    <img src=""> <img src=""> <img src=""> <img src=""> <img src="">
+    <img src=""> <img src=""> <img src=""> <img src=""> <img src="">
+</div>
+
+<div id="gallery3" class="inside-gallery">
+    <img src=""> <img src=""> <img src=""> <img src=""> <img src="">
+    <img src=""> <img src=""> <img src=""> <img src=""> <img src="">
+</div>
+
+<div id="gallery4" class="inside-gallery">
+    <img src=""> <img src=""> <img src=""> <img src=""> <img src="">
+    <img src=""> <img src=""> <img src=""> <img src=""> <img src=""> 
+</div>
+
+<div id="gallery5" class="inside-gallery">
+    <img src=""> <img src=""> <img src=""> <img src=""> <img src="">
+    <img src=""> <img src=""> <img src=""> <img src=""> <img src="">
+</div>
+
+<div id="gallery6" class="inside-gallery">
+    <img src=""> <img src=""> <img src=""> <img src=""> <img src="">
+    <img src=""> <img src=""> <img src=""> <img src=""> <img src="">
+</div>
+
+<!-- ---------------------------------------------------
+     🖼️  Popup الصورة الكبيرة
+------------------------------------------------------>
+<div class="popup-img" id="popup">
+    <span onclick="closePopup()">&times;</span>
+    <img id="popup-img">
+</div>
+
+
+<section class="media">
+      <h2>تابعنا علي وسائل التواصل الاجتماعي</h2>
+    <div class="links">
+           <div class="line1">
+               <a href="" class="link-1">
+                    <i class="fa-brands fa-instagram"></i>
+                    
+                </a>
+                </div>
+                 <div class="line2">
+                  <a href="" class="link-2">
+                    <i class="fa-brands fa-whatsapp"></i>
+                   
+                </a>
+                </div>
+                <div class="line3">
+                  <a href="" class="link-3">
+                    <i class="fa-brands fa-facebook"></i>
+                  
+                </a>
+              </div>
+                  <div class="line4">
+                  <a href="" class="link-4">
+                    <i class="fa-brands fa-tiktok"></i>
+                    
+                </a>
+              </div>
+         </div>
+    </section>
+
+<!-- ---------------------------------------------------
+     📌  JavaScript للتحكم بالحركة
+------------------------------------------------------>
+<script>
+function openGallery(id) {
+    document.querySelector(".main-gallery").style.display = "none";
+    document.querySelector(".back-btn").style.display = "block";
+
+    document.querySelectorAll(".inside-gallery").forEach(g => g.style.display = "none");
+
+    document.getElementById(id).style.display = "grid";
+}
+
+function goBack() {
+    document.querySelector(".main-gallery").style.display = "grid";
+    document.querySelector(".back-btn").style.display = "none";
+    document.querySelectorAll(".inside-gallery").forEach(g => g.style.display = "none");
+}
+
+document.querySelectorAll(".inside-gallery img").forEach(img => {
+    img.onclick = function() {
+        document.getElementById("popup-img").src = this.src;
+        document.getElementById("popup").style.display = "flex";
+    }
+});
+
+function closePopup() {
+    document.getElementById("popup").style.display = "none";
+}
+</script>
+
+</body>
+</html>
